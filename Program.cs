@@ -1,10 +1,14 @@
-﻿namespace Experiments
+﻿using BenchmarkDotNet.Running;
+using Experiments.Linq;
+
+namespace Experiments
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            var summary = BenchmarkRunner.Run<LoopVsLinq>();
+            Console.ReadLine();
         }
     }
 }
